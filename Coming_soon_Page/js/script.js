@@ -5,26 +5,23 @@ const minutes = document.querySelector(".minutes .number");
 const hours = document.querySelector(".hours .number");
 const days = document.querySelector(".days .number");
 
-let secValue = 33;
-let minValue = 1;
-let hourValue = 2;
-let dayValue = 10;
+let deadlineDate = new Date(" Sep 18, 2022 23:59:58").getTime();
 
 const timeFunction = setInterval(() => {
-    secValue--;
+    let currentDate = new Date().getTime();
 
-    if (secValue === 0) {
-    minValue--;
-    secValue = 60;
-    }
-    if (minValue === 0) {
-    hourValue--;
-    minValue = 60;
-    }
-    if (hourValue === 0) {
-    dayValue--;
-    hourValue = 24;
-    }
+    let restTime = deadlineDate - currentDate;
+
+    const tempSecValue = 1000;
+    const tempMinValue = tempSecValue * 60;
+    const tempHourValue = tempMinValue * 60;
+    const tempDayValue = tempHourValue * 24;
+
+    let dayValue = Math.floor(restTime / tempDayValue);
+    let hourValue = Math.floor((restTime % tempDayValue) / tempHourValue);
+    let minValue = Math.floor((restTime % tempHourValue) / tempMinValue);
+    let secValue = Math.floor((restTime % tempMinValue) / tempSecValue);
+
 
     if (dayValue === 0) {
     clearInterval(timeFunction);
