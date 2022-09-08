@@ -2,7 +2,10 @@
  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
  body {
-	background-color: #0d6a81;
+	background: url("./img/lfgBg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
  }
  * {
 	margin: 0;
@@ -27,17 +30,7 @@
 	width: 100%;
 	overflow: hidden;
   }
-  .container .image {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	z-index: -1;
-  }
-  .container span {
-	align-items: center;
-    
-  }
+
   .container header {
 	font-size: 60px;
 	color: #fff;
