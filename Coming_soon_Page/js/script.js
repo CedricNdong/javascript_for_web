@@ -5,7 +5,7 @@ const minutes = document.querySelector(".minutes .number");
 const hours = document.querySelector(".hours .number");
 const days = document.querySelector(".days .number");
 
-let deadlineDate = new Date(" Sep 18, 2022 23:59:58").getTime();
+let deadlineDate = new Date(" Jan 9, 2023 23:59:58").getTime();
 
 const timeFunction = setInterval(() => {
     let currentDate = new Date().getTime();
