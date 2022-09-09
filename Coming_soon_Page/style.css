@@ -13,6 +13,7 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
   }
+  
 
   * {
 	margin: 0;
@@ -20,6 +21,16 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
   }
+  .alert{
+	width: 100%;
+	background: rgb(64,34,195);
+	background: linear-gradient(0deg, rgba(64,34,195,1) 0%, rgba(181,105,71,1) 24%, rgba(88,105,184,1) 54%, rgba(253,187,45,1) 100%);
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-align: center;
+	
+  }
+  
   .container {
 	display: flex;
 	row-gap: 15px;

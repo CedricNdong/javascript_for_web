@@ -41,16 +41,31 @@
 			<p>Abonnieren Sie jetzt, um die neuesten Updates zu erhalten!</p>
 	
 			<div class="input-box">
-				<form class="input-box">
-			  	<input type="email" placeholder="Email eingeben" required/>
-			  <button>Senden</button>
+				<form class="input-box" action="" id="emailForm">
+					<div class="alert"> Danke für Ihr Besuch &#128522;</div>
+					<input type="email" placeholder="Email eingeben" id="emailID"required/>
+					<button type="submit" id="submitID">Senden</button>
 				</form>
 			</div>
-		  </div>
+		</div>
+		
+		
 	</section>
 	
-<!--Javascript-->
+
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+
+	
+	<!--Javascript-->
 <script src="./js/script.js"></script>
+
+
+
 </body>
 
 

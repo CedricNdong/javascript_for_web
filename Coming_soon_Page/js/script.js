@@ -34,3 +34,63 @@ const timeFunction = setInterval(() => {
 }, 1000); 
 
 
+
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+		  apiKey: "AIzaSyBT93muO9XfezDTrTFKmdHRGhC0cDX8_DA",
+		  authDomain: "db-lesfutursgeeks.firebaseapp.com",
+      databaseURL: "https://db-lesfutursgeeks-default-rtdb.firebaseio.com/",
+		  projectId: "db-lesfutursgeeks",
+		  storageBucket: "db-lesfutursgeeks.appspot.com",
+		  messagingSenderId: "786656424751",
+		  appId: "1:786656424751:web:701ac3ec095fa49bd727da"
+		};
+	  
+		// Initialize Firebase
+	
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+// reference your database
+let emailFormDB = firebase.database().ref("emailCollect");
+
+document.getElementById("emailForm").addEventListener("submit", emailSender);
+
+function emailSender(e) {
+  e.preventDefault();
+
+  let emailValue = getElementVal("emailID");
+
+  console.log(" it's work ");
+
+
+  saveEmails(emailValue);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("emailForm").reset();
+}
+
+const saveEmails = (emailValue) => {
+  let newContactForm = emailFormDB.push();
+
+  newContactForm.set({
+    email : emailValue
+   
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
+
+
+
+
